@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import { Form, Field, withFormik } from "formik";
 
 
@@ -20,6 +21,24 @@ const NewUserForm = () => {
   );
 };
 
-const FormikNewUserForm = withFormik({})(NewUserForm)
+const FormikNewUserForm = withFormik({
+    mapPropsToValues({ name, email, password, terms }){
+        return {
+            name: name || '',
+            email: email || '',
+            password: password || '',
+            terms: terms || false
+        };
+    },
+
+
+    handleSubmit(values) {
+        axios
+          .post('https://reqres.in/api/users/', values)
+          .then(res => console.log(res))
+          .catch(err => console.log(err.response));
+      }
+
+})(NewUserForm)
 
 export default FormikNewUserForm;
