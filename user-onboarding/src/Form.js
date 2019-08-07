@@ -1,9 +1,16 @@
 import React from 'react';
+import { Form, Field, withFormik } from 'formik';
 
 const Form = () => {
     return(
-        <div>
-            
+        <div className="newUserForm">
+            <Form>
+                <Field></Field>
+                <Field></Field>
+                <Field></Field>
+                <Field></Field>
+            </Form>
+
         </div>
     )
 }
