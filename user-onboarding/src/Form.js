@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Field } from "formik";
+import { Form, Field, withFormik } from "formik";
+
 
 const NewUserForm = () => {
   return (
@@ -19,4 +20,6 @@ const NewUserForm = () => {
   );
 };
 
-export default NewUserForm;
+const FormikNewUserForm = withFormik({})(NewUserForm)
+
+export default FormikNewUserForm;
