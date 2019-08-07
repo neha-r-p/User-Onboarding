@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 
-const NewUserForm = ({ errors, touched, values }) => {
+const NewUserForm = ({ errors, touched, values, handleSubmit, status }) => {
+    const [newUser, setNewUser] = useState([]);
+    // console.log(newUser)
+
+    useEffect(() => {
+        if (status) {
+            setNewUser([...newUser, status]);
+          }
+    }, [status]);
+
+    
   return (
     <div className="newUserForm">
       <h2>New User Form</h2>
@@ -27,6 +37,9 @@ const NewUserForm = ({ errors, touched, values }) => {
         </label>
         <button type="submit">Submit</button>
       </Form>
+      {newUser.map(user => (
+        <p key={user.id}>{user.name}</p>
+      ))}
     </div>
   );
 };
@@ -50,10 +63,12 @@ const FormikNewUserForm = withFormik({
     terms: Yup.boolean(true).required('You must accept the terms of service.')
   }),
 
-  handleSubmit(values) {
+  handleSubmit(values, { setStatus }) {
     axios
       .post("https://reqres.in/api/users/", values)
-      .then(res => console.log(res))
+      .then(res => {
+          console.log(res)
+          setStatus(res.data)})
       .catch(err => console.log(err.response));
   }
 })(NewUserForm);
