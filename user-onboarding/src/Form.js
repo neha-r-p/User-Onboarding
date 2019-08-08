@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
+import './App.css'
 
 const NewUserForm = ({ errors, touched, values, handleSubmit, status }) => {
     const [newUser, setNewUser] = useState([]);
@@ -60,7 +61,7 @@ const FormikNewUserForm = withFormik({
     password: Yup.string()
       .min(6, "Your password must be at least 6 characters.")
       .required("Your password is required."),
-    terms: Yup.boolean(true).required('You must accept the terms of service.')
+    terms: Yup.bool(true).required('You must accept the terms of service.')
   }),
 
   handleSubmit(values, { setStatus }) {
