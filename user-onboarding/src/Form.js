@@ -38,6 +38,7 @@ const NewUserForm = ({ errors, touched, values, handleSubmit, status }) => {
         </label>
         <button type="submit">Submit</button>
       </Form>
+      <h3>User List:</h3>
       {newUser.map(user => (
         <p key={user.id}>{user.name}</p>
       ))}

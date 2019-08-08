@@ -11,10 +11,18 @@
 
 .newUserForm>form>input{
   margin: 10px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.newUserForm>form>label {
+  margin: 10px auto;
 }
 
 .newUserForm>form>button {
-  width: 75px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   margin: 10px auto;
+  border-radius: 10px;
+  font-size: 18px;
 }
