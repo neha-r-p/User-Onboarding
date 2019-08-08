@@ -15,6 +15,13 @@
   font-size: 18px;
 }
 
+.newUserForm>form>.error{
+  font-size: 12px;
+  margin: 0;
+  text-align: left;
+  color: red;
+}
+
 .newUserForm>form>label {
   margin: 10px auto;
 }

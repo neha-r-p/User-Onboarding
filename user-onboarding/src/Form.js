@@ -40,7 +40,7 @@ const NewUserForm = ({ errors, touched, values, handleSubmit, status }) => {
       </Form>
       <h3>User List:</h3>
       {newUser.map(user => (
-        <p key={user.id}>{user.name}</p>
+        <p key={user.id}>{user.name}: {user.email}</p>
       ))}
     </div>
   );
