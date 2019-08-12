@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.newUserForm>form {
+  width: 400px;
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+} 
+
+.newUserForm>form>input{
+  margin: 10px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.newUserForm>form>.error{
+  font-size: 12px;
+  margin: 0;
+  text-align: left;
+  color: red;
+}
+
+.newUserForm>form>label {
+  margin: 10px auto;
+}
+
+.newUserForm>form>button {
+  width: 100px;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 18px;
+}
